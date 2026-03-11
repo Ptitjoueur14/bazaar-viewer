@@ -24,22 +24,7 @@ async function loadBazaar()
             //console.log(`Item id ${itemId}: Name ${item.productId}, buy ${item.buyPrice}, sell ${item.sellPrice}`);
 
             const div = document.createElement("div");
-            if (itemId.includes("ENCHANTMENT_ULTIMATE")) 
-            {
-                div.className = "bazaar-item-enchantment-ultimate";
-            }
-            else if (itemId.includes("ENCHANTMENT")) 
-            {
-                div.className = "bazaar-item-enchantment"
-            }
-            else if (itemId.includes("SHARD"))
-            {
-                div.className = "bazaar-item-shard"
-            }
-            else
-            {
-                div.className = "bazaar-item";
-            }
+            changeItemColor(div, itemId);
 
             div.innerHTML = `
                 <strong>${itemId}</strong><br>
@@ -56,6 +41,30 @@ async function loadBazaar()
         console.error(err);
         document.getElementById("bazaar-container").innerText = 
         "Failed to load Bazaar data.";
+    }
+}
+
+function changeItemColor(div, itemId)
+{
+    if (itemId.includes("ENCHANTMENT_ULTIMATE")) 
+    {
+        div.className = "bazaar-item-enchantment-ultimate";
+    }
+    else if (itemId.includes("ENCHANTMENT")) 
+    {
+        div.className = "bazaar-item-enchantment"
+    }
+    else if (itemId.includes("SHARD"))
+    {
+        div.className = "bazaar-item-shard"
+    }
+    else if (itemId.includes("ENCHANTED"))
+    {
+        div.className = "bazaar-item-enchanted-item"
+    }
+    else
+    {
+        div.className = "bazaar-item";
     }
 }
 

@@ -9,7 +9,7 @@ body
 #bazaar-container
 {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
 }
 
@@ -29,7 +29,7 @@ body
 
 .bazaar-item-enchantment-ultimate
 {
-    background: #5a0b3d;
+    background: #6b0d49;
     padding: 10px;
     border-radius: 6px;
 }
@@ -37,6 +37,13 @@ body
 .bazaar-item-shard
 {
     background: #0f5593;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-enchanted-item
+{
+    background: #0f9337;
     padding: 10px;
     border-radius: 6px;
 }
