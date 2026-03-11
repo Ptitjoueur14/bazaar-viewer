@@ -6,3 +6,17 @@ body
     padding: 20px;
 }
 
+#bazaar-container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.bazaar-item
+{
+    background: #353404;
+    padding: 10px;
+    border-radius: 6px;
+}
+
