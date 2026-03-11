@@ -24,7 +24,22 @@ async function loadBazaar()
             //console.log(`Item id ${itemId}: Name ${item.productId}, buy ${item.buyPrice}, sell ${item.sellPrice}`);
 
             const div = document.createElement("div");
-            div.className = "bazaar-item";
+            if (itemId.includes("ENCHANTMENT_ULTIMATE")) 
+            {
+                div.className = "bazaar-item-enchantment-ultimate";
+            }
+            else if (itemId.includes("ENCHANTMENT")) 
+            {
+                div.className = "bazaar-item-enchantment"
+            }
+            else if (itemId.includes("SHARD"))
+            {
+                div.className = "bazaar-item-shard"
+            }
+            else
+            {
+                div.className = "bazaar-item";
+            }
 
             div.innerHTML = `
                 <strong>${itemId}</strong><br>

@@ -20,3 +20,24 @@ body
     border-radius: 6px;
 }
 
+.bazaar-item-enchantment
+{
+    background: #941766;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-enchantment-ultimate
+{
+    background: #5a0b3d;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-shard
+{
+    background: #0f5593;
+    padding: 10px;
+    border-radius: 6px;
+}
+
