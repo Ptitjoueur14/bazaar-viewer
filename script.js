@@ -11,8 +11,6 @@ async function loadBazaar()
 
         const products = data.products;
         const container = document.getElementById("bazaar-container");
-        //count = Object.keys(products).length;
-        //console.log("Found ${count} products on the Bazaar.");
 
         container.innerHTML = "";
 
