@@ -59,7 +59,7 @@ async function loadBazaar()
     }
 }
 
-function get_dragon_fragments()
+function getTheEndItems()
 {
     const DRAGON_FRAGMENTS = [
         "CRYSTAL_FRAGMENT",
@@ -78,6 +78,13 @@ function get_dragon_fragments()
     );
 }
 
+function getShardItems()
+{
+    return allItems.filter(item =>
+        item.itemId.contains("SHARD")
+    );
+}
+
 function showAllItems()
 {
     displayProducts(allItems);
@@ -85,8 +92,14 @@ function showAllItems()
 
 function showEndItems()
 {
-    const endItems = get_dragon_fragments();
+    const endItems = getTheEndItems();
     displayProducts(endItems);
+}
+
+function showShardItems()
+{
+    const shardItems = getShardItems();
+    displayProducts(shardItems);
 }
 
 loadBazaar();
