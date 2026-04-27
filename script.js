@@ -42,13 +42,13 @@ async function loadBazaar()
 
         const path = window.location.pathname;
         console.log(`Path: ${path}`);
-        
+
         if (path.includes("/the-end"))
         {
             showEndItems();
             console.log("Showing The End items");
         }
-        if (path.includes("/shards"))
+        else if (path.includes("/shards"))
         {
             showShardItems();
             console.log("Showing Shard items");
