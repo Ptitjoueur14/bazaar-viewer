@@ -1,4 +1,4 @@
-export function displayProducts(items)
+function displayProducts(items)
 {
     const container = document.getElementById("bazaar-container");
     container.innerHTML = "";
@@ -15,5 +15,6 @@ export function displayProducts(items)
         `;
 
         container.appendChild(div);
+        item.printItemInfo();
     }
 }
