@@ -35,7 +35,6 @@ async function loadBazaar()
         const response_bazaar = await fetch(API_BAZAAR_URL);
         const data_bazaar = await response_bazaar.json();
         console.log("Successfully loaded Hypixel Skyblock Bazaar API");
-        console.log(products);
 
         // Load Hypixel Skyblock Items API
         console.log(`Loading Hypixel Skyblock Items API at ${API_ITEMS_URL}`);
@@ -44,6 +43,8 @@ async function loadBazaar()
         console.log("Successfully loaded Hypixel Skyblock Items API");
 
         const products = data_bazaar.products;
+        console.log(products);
+
         const itemsArray = data_items.items;
 
         const items = {};
@@ -51,6 +52,7 @@ async function loadBazaar()
         {
             items[item.id] = item;
         }
+        console.log(items);
 
         const productsCount = Object.keys(products).length;
         console.log(`Found ${productsCount} products on the Bazaar`);

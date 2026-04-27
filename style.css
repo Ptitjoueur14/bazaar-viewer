@@ -20,65 +20,20 @@ body
     border-radius: 6px;
 }
 
-.bazaar-item-common
-{
-    background: #353404;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-common { background: #353404; }
 
-.bazaar-item-uncommon
-{
-    background: #0f9337;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-uncommon { background: #0f9337; }
 
-.bazaar-item-rare
-{
-    background: #0f5593;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-rare { background: #0f5593; }
 
-.bazaar-item-epic
-{
-    background: #6e0f93;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-epic { background: #6e0f93; }
 
-.bazaar-item-legendary
-{
-    background: #c68610;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-legendary { background: #c68610; }
 
-.bazaar-item-mythic
-{
-    background: #c61037;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-mythic { background: #c61037; }
 
-.bazaar-item-supreme
-{
-    background: #c61037;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-supreme { background: #c61037; }
 
-.bazaar-item-special
-{
-    background: #c61037;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-special { background: #c61037; }
 
-.bazaar-item-very-special
-{
-    background: #c61037;
-    padding: 10px;
-    border-radius: 6px;
-}
+.bazaar-item-very-special { background: #c61037; }
