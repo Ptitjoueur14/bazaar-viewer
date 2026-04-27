@@ -27,4 +27,13 @@ class BazaarItem
     {
         console.log(`${this.itemId}: Buy: ${this.buyPrice}, Sell: ${this.sellPrice}, Profit: ${this.profit}`);
     }
+
+    getPrice(price)
+    {
+        if (price < 100)
+        {
+            return price.toFixed(2);
+        }
+        return price.toFixed(0);
+    }
 }

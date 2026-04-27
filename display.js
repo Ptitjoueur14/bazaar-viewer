@@ -32,10 +32,12 @@ function displayProducts(items)
         const div = document.createElement("div");
         changeItemColor(div, item.itemId);
 
+        let buyPrice = item.buyPrice;
+
         div.innerHTML = `
             <strong>${item.displayName}</strong><br>
-            Buy: ${item.buyPrice.toFixed(0)}<br>
-            Sell: ${item.sellPrice.toFixed(0)}
+            Buy: ${item.getPrice(item.buyPrice)}<br>
+            Sell: ${item.getPrice(item.sellPrice)}
         `;
 
         container.appendChild(div);
