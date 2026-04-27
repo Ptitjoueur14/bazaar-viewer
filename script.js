@@ -85,7 +85,7 @@ function getTheEndItems()
 function getShardItems()
 {
     return allItems.filter(item =>
-        item.itemId.contains("SHARD")
+        item.itemId.includes("SHARD")
     );
 }
 
