@@ -1,11 +1,13 @@
 class BazaarItem
 {
-    constructor(itemId, buyPrice, sellPrice)
+    constructor(itemId, buyPrice, sellPrice, rarity, category)
     {
         this.itemId = itemId;
         this.displayName = this.formatItemName();
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
+        this.rarity = rarity;
+        this.category = category;
         this.profit = this.getProfit();
     }
 
@@ -23,9 +25,9 @@ class BazaarItem
         return this.sellPrice - this.buyPrice;
     }
 
-    printItemInfo()
+    getItemInfo()
     {
-        console.log(`${this.itemId}: Buy: ${this.buyPrice}, Sell: ${this.sellPrice}, Profit: ${this.profit}`);
+        return `${this.itemId}: Buy: ${this.buyPrice}, Sell: ${this.sellPrice}, Profit: ${this.profit} [${this.rarity}][${this.category}]`;
     }
 
     getPrice(price)

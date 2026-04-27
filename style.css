@@ -20,30 +20,65 @@ body
     border-radius: 6px;
 }
 
-.bazaar-item-enchantment
+.bazaar-item-common
 {
-    background: #941766;
+    background: #353404;
     padding: 10px;
     border-radius: 6px;
 }
 
-.bazaar-item-enchantment-ultimate
+.bazaar-item-uncommon
 {
-    background: #6b0d49;
+    background: #0f9337;
     padding: 10px;
     border-radius: 6px;
 }
 
-.bazaar-item-shard
+.bazaar-item-rare
 {
     background: #0f5593;
     padding: 10px;
     border-radius: 6px;
 }
 
-.bazaar-item-enchanted-item
+.bazaar-item-epic
 {
-    background: #0f9337;
+    background: #6e0f93;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-legendary
+{
+    background: #c68610;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-mythic
+{
+    background: #c61037;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-supreme
+{
+    background: #c61037;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-special
+{
+    background: #c61037;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.bazaar-item-very-special
+{
+    background: #c61037;
     padding: 10px;
     border-radius: 6px;
 }

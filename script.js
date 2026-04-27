@@ -1,44 +1,59 @@
-const API_URL = "https://api.hypixel.net/v2/skyblock/bazaar";
+const API_BAZAAR_URL = "https://api.hypixel.net/v2/skyblock/bazaar";
+const API_ITEMS_URL = "https://api.hypixel.net/v2/resources/skyblock/items";
 
 let allItems = []
 
-function convertToBazaarItems(products)
+function convertToBazaarItems(products, items)
 {
-    let items = []
+    let itemsList = []
 
     for (const itemId in products)
     {
         const quickStatus = products[itemId].quick_status;
+        const rarity = items[itemId].tier;
+        const category = items[itemId].category;
         let item = new BazaarItem(
             itemId,
             quickStatus.buyPrice,
-            quickStatus.sellPrice
-        )
+            quickStatus.sellPrice,
+            rarity,
+            category
+        );
 
         item.displayName = item.formatItemName();
 
-        items.push(item);
+        itemsList.push(item);
     }
 
-    return items;
+    return itemsList;
 }
 
 async function loadBazaar()
 {
     try
     {
-        console.log("Loading Hypixel Skyblock API at https://api.hypixel.net/v2/skyblock/bazaar");
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        console.log("Successfully loaded Hypixel Skyblock API");
+        // Load Hypixel Skyblock Bazaar API
+        console.log(`Loading Hypixel Skyblock Bazaar API at ${API_BAZAAR_URL}`);
+        const response_bazaar = await fetch(API_BAZAAR_URL);
+        const data_bazaar = await response_bazaar.json();
+        console.log("Successfully loaded Hypixel Skyblock Bazaar API");
 
-        const products = data.products;
+        // Load Hypixel Skyblock Items API
+        console.log(`Loading Hypixel Skyblock Items API at ${API_ITEMS_URL}`);
+        const response_items = await fetch(API_ITEMS_URL);
+        const data_items = await response_items.json();
+        console.log("Successfully loaded Hypixel Skyblock Items API");
+
+        const products = data_bazaar.products;
+        const items = data_items.items;
         console.log(products);
 
         const productsCount = Object.keys(products).length;
         console.log(`Found ${productsCount} products on the Bazaar`);
+        const itemsCount = Object.keys(items).length;
+        console.log(`Found ${itemsCount} items in Skyblock`);
 
-        allItems = convertToBazaarItems(products);
+        allItems = convertToBazaarItems(products, items);
 
         const path = window.location.pathname;
         console.log(`Path: ${path}`);
