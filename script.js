@@ -14,8 +14,9 @@ async function loadBazaar()
 
         const productsCount = Object.keys(products).length;
         console.log(`Found ${productsCount} products on the Bazaar`);
-
-        displayProducts(products);
+        
+        items = convertToBazaarItems(products);
+        displayProducts(items);
     }
 
     catch(err)
@@ -48,6 +49,25 @@ function changeItemColor(div, itemId)
     {
         div.className = "bazaar-item";
     }
+}
+
+function convertToBazaarItems(products)
+{
+    items = []
+
+    for (const itemId in products)
+    {
+        const quickStatus = products[itemId].quickStatus;
+        item = new BazaarItem(
+            itemId,
+            quickStatus.buyPrice,
+            quickStatus.sellPrice,
+        )
+
+        items.push(item);
+    }
+
+    return items;
 }
 
 function get_dragon_fragments()

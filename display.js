@@ -1,18 +1,15 @@
-function displayProducts(products)
+export function displayProducts(items)
 {
     const container = document.getElementById("bazaar-container");
     container.innerHTML = "";
 
-    for (const itemId in products)
+    for (const item of items)
     {
-        const item = products[itemId].quick_status;
-        //console.log(`Item id ${itemId}: Name ${item.productId}, buy ${item.buyPrice}, sell ${item.sellPrice}`);
-
         const div = document.createElement("div");
-        changeItemColor(div, itemId);
+        changeItemColor(div, item.itemId);
 
         div.innerHTML = `
-            <strong>${itemId}</strong><br>
+            <strong>${item.displayName}</strong><br>
             Buy: ${item.buyPrice.toFixed(2)}<br>
             Sell: ${item.sellPrice.toFixed(2)}
         `;

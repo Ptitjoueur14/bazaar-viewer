@@ -10,7 +10,7 @@ class BazaarItem
 
     formatItemName()
     {
-        return this.id
+        return this.itemId
         .toLowerCase()
         .split("_")
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
