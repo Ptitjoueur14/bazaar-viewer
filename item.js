@@ -3,9 +3,10 @@ class BazaarItem
     constructor(itemId, buyPrice, sellPrice)
     {
         this.itemId = itemId;
+        this.displayName = this.formatItemName();
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
-        this.displayName = this.formatItemName();
+        this.profit = this.getProfit();
     }
 
     formatItemName()
@@ -24,6 +25,6 @@ class BazaarItem
 
     printItemInfo()
     {
-        console.log(`${this.itemId}: Buy: ${this.buyPrice}, Sell: ${this.sellPrice}`);
+        console.log(`${this.itemId}: Buy: ${this.buyPrice}, Sell: ${this.sellPrice}, Profit: ${this.profit}`);
     }
 }
