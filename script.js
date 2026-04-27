@@ -13,7 +13,7 @@ function convertToBazaarItems(products, items)
 
         const meta = items[itemId] || {};
         const rarity = meta.tier || "COMMON";
-        const category = meta.category || "MISC";
+        let category = meta.category || "MISC";
 
         if (meta.material == "SKULL_ITEM")
         {
