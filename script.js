@@ -68,7 +68,7 @@ async function loadBazaar()
         console.log(`Found ${itemsCount} items in Skyblock`);
 
         allItems = convertToBazaarItems(products, items);
-        allItems.sort((item1, item2) => item1.id.localeCompare(item2.displayName));
+        allItems.sort((item1, item2) => item1.itemId.localeCompare(item2.itemId));
         console.log(allItems);
 
         const path = window.location.pathname;
