@@ -20,8 +20,6 @@ function convertToBazaarItems(products, items)
             category
         );
 
-        item.displayName = item.formatItemName();
-
         itemsList.push(item);
     }
 
@@ -37,6 +35,7 @@ async function loadBazaar()
         const response_bazaar = await fetch(API_BAZAAR_URL);
         const data_bazaar = await response_bazaar.json();
         console.log("Successfully loaded Hypixel Skyblock Bazaar API");
+        console.log(products);
 
         // Load Hypixel Skyblock Items API
         console.log(`Loading Hypixel Skyblock Items API at ${API_ITEMS_URL}`);
@@ -45,8 +44,13 @@ async function loadBazaar()
         console.log("Successfully loaded Hypixel Skyblock Items API");
 
         const products = data_bazaar.products;
-        const items = data_items.items;
-        console.log(products);
+        const itemsArray = data_items.items;
+
+        const items = {};
+        for (const item of itemsArray)
+        {
+            items[item.id] = item;
+        }
 
         const productsCount = Object.keys(products).length;
         console.log(`Found ${productsCount} products on the Bazaar`);
