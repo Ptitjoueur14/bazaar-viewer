@@ -10,8 +10,11 @@ function convertToBazaarItems(products, items)
     for (const itemId in products)
     {
         const quickStatus = products[itemId].quick_status;
-        const rarity = items[itemId].tier;
-        const category = items[itemId].category;
+
+        const meta = items[itemId] || {};
+        const rarity = meta.tier || "COMMON";
+        const category = meta.category || "MISC";
+        
         let item = new BazaarItem(
             itemId,
             quickStatus.buyPrice,
