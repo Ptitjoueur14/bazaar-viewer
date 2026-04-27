@@ -14,7 +14,7 @@ function convertToBazaarItems(products, items)
         const meta = items[itemId] || {};
         const rarity = meta.tier || "COMMON";
         const category = meta.category || "MISC";
-        
+
         let item = new BazaarItem(
             itemId,
             quickStatus.buyPrice,
@@ -121,18 +121,21 @@ function getShardItems()
 function showAllItems()
 {
     displayProducts(allItems);
+    console.log(allItems);
 }
 
 function showEndItems()
 {
     const endItems = getTheEndItems();
     displayProducts(endItems);
+    console.log(endItems);
 }
 
 function showShardItems()
 {
     const shardItems = getShardItems();
     displayProducts(shardItems);
+    console.log(shardItems);
 }
 
 loadBazaar();
