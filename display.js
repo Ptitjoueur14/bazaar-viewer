@@ -41,6 +41,5 @@ function displayProducts(items)
         `;
 
         container.appendChild(div);
-        item.printItemInfo();
     }
 }

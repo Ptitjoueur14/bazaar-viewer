@@ -41,17 +41,22 @@ async function loadBazaar()
         allItems = convertToBazaarItems(products);
 
         const path = window.location.pathname;
+        console.log(`Path: ${path}`);
+        
         if (path.includes("/the-end"))
         {
             showEndItems();
+            console.log("Showing The End items");
         }
         if (path.includes("/shards"))
         {
             showShardItems();
+            console.log("Showing Shard items");
         }
         else
         {
             showAllItems();
+            console.log("Showing All items");
         }
     }
 
@@ -85,7 +90,7 @@ function getTheEndItems()
 function getShardItems()
 {
     return allItems.filter(item =>
-        item.itemId.includes("SHARD")
+        item.itemId.includes("SHARD_")
     );
 }
 
