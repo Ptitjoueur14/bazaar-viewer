@@ -53,15 +53,15 @@ function changeItemColor(div, itemId)
 
 function convertToBazaarItems(products)
 {
-    items = []
+    let items = []
 
     for (const itemId in products)
     {
-        const quickStatus = products[itemId].quickStatus;
-        item = new BazaarItem(
+        const quickStatus = products[itemId].quick_status;
+        let item = new BazaarItem(
             itemId,
             quickStatus.buyPrice,
-            quickStatus.sellPrice,
+            quickStatus.sellPrice
         )
 
         items.push(item);
