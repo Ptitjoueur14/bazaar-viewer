@@ -17,10 +17,10 @@ function displayProducts(items)
 
         div.innerHTML = `
             <strong>${item.displayName}</strong><br>
-            <b>${item.rarity}</b>
+            <b>${item.category}</b><br>
             Buy: ${item.getPrice(item.buyPrice)}<br>
-            Sell: ${item.getPrice(item.sellPrice)}
-            <b>${item.category}</b>
+            Sell: ${item.getPrice(item.sellPrice)}<br>
+            <b>${item.rarity}</b>
         `;
 
         container.appendChild(div);
