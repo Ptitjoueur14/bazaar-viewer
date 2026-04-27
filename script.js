@@ -37,9 +37,18 @@ async function loadBazaar()
 
         const productsCount = Object.keys(products).length;
         console.log(`Found ${productsCount} products on the Bazaar`);
-        
+
         allItems = convertToBazaarItems(products);
-        showAllItems();
+
+        const path = window.location.pathname;
+        if (path.includes("/end"))
+        {
+            showEndItems();
+        }
+        else
+        {
+            showAllItems();
+        }
     }
 
     catch(err)
