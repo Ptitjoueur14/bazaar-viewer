@@ -41,9 +41,13 @@ async function loadBazaar()
         allItems = convertToBazaarItems(products);
 
         const path = window.location.pathname;
-        if (path.includes("/end"))
+        if (path.includes("/the-end"))
         {
             showEndItems();
+        }
+        if (path.includes("/shards"))
+        {
+            showShardItems();
         }
         else
         {
